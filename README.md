@@ -4,8 +4,8 @@ Esse repositorio sera destinado a um sistema desktop de tesouraria
 
 Tecnologias que possivelmente serao usadas(ate o momento):
 
---JavaScript/TypeScript
---Java/Spring
---Angular
+--JavaScript/TypeScript <br>
+--Java/Spring <br>
+--Angular <br>
 --ElectronJS
 
