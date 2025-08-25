@@ -1,0 +1,15 @@
+<div class='sidebar'>
+  <div class='title-box'>
+    <div class="sidebar-image">
+      <img src="assets/icon.png" class="img-side" alt="icon home page">
+    </div>
+    <div class="title"><h1>TDM</h1></div>
+  </div>
+
+  <div class="buttons-part">
+    <button *ngFor="let btn of btns" class="button-nav">
+      <img [src]=btn.icon class="button-icon">
+      {{btn.name}}
+    </button>
+  </div>
+</div>
