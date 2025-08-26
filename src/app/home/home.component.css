@@ -1,0 +1,42 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #0b0415;
+}
+
+
+.row-1{
+    display: flex;
+    flex-direction: row;
+    height: calc(50% - 50px);
+    width:calc(100% - 100px);
+}
+
+
+.row-2{
+    width: calc(100% - 100px);
+    height: calc(50% - 50px);
+    display: flex;
+}
+
+.control-class{
+    background-color: #2ff600;
+    height: 100%;
+    width: 100%;
+}
+
+.reports-class{
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+}
+
+.residents-class{
+    background-color: #ff0000;
+    height: 100%;
+    width: 100%;
+}

@@ -1,2 +1,0 @@
---app-main-color: #0b0415
---app-sidebar-color:

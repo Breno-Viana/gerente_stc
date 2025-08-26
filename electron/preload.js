@@ -1,5 +1,6 @@
 const { contextBridge,ipcRenderer} = require('electron')
 
 contextBridge.exposeInMainWorld('api', {
-  hello: ()=> ipcRenderer.invoke('hello')
+  hello: (str)=> ipcRenderer.invoke('hello')
+
 })

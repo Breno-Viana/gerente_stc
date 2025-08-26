@@ -3,7 +3,7 @@ export {};
 declare global {
   interface Window {
     api: {
-      hello: () => void;
+      hello: (str) => void;
     };
   }
 }

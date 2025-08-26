@@ -13,7 +13,6 @@ function bootApp() {
     }
   })
 
-  console.log(__dirname)
   // bootWindow.webContents.openDevTools()
   bootWindow.loadFile(path.join(__dirname, '../dist/treasury_desk_manager/browser/index.html'))
 }
@@ -21,7 +20,7 @@ function bootApp() {
 
 app.whenReady()
   .then(() => {
-    ipcMain.handle('hello', ()=>{
+    ipcMain.handle('hello', (str)=>{
       console.log('Hello Do Electron')
     })
   }).then(bootApp)
