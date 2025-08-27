@@ -19,6 +19,18 @@ main{
   width: 100vw;
 }
 
+.cursor-glow {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 156, 239, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  filter: blur(80px);
+  z-index: 9999;
+}
+
 
 
 

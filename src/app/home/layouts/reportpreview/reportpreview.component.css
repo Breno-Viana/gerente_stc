@@ -1,0 +1,9 @@
+:host{
+    width: 95%;
+    height: 95%;
+}
+main{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+}

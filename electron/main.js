@@ -6,8 +6,10 @@ Menu.setApplicationMenu(null)
 
 function bootApp() {
   const bootWindow = new BrowserWindow({
-    width: 1300,
+    minWidth: 300,
+    minHeight: 100,
     height: 800,
+    width:1300,
     webPreferences:{
       preload:path.join(__dirname, 'preload.js')
     }
