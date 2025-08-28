@@ -50,7 +50,8 @@
   letter-spacing: 5px;
   font-family: "Cantarell", serif;
   color: rgba(118, 176, 207, 0.91);
-  text-shadow: 0 0 25px rgba(86, 37, 174, 0.65);;
+  text-shadow: 0 0 25px rgba(86, 37, 174, 0.65);
+  cursor: default;
 }
 
 .buttons-part {

@@ -1,17 +1,16 @@
-<div class='sidebar' >
+<div class='sidebar'>
     <div class='title-box'>
         <div class="sidebar-image">
             <img src="assets/icon.png" class="img-side" alt="icon home page">
         </div>
-        <div class="title"><h1>TDM</h1></div>
+        <div class="title">
+            <h1>STC</h1>
+        </div>
     </div>
 
     <div class="buttons-part">
-        <button *ngFor="let btn of buttons; let i = index"
-                class="button-nav"
-                [class.active]="sidebarService.getIndexOfNav() === i"
-                (click)="change(i)"
-                [routerLink]="btn.route">
+        <button *ngFor="let btn of buttons; let i = index" class="button-nav"
+            [class.active]="sidebarService.getIndexOfNav() === i" (click)="change(i)" [routerLink]="btn.route">
             <img [src]=btn.icon class="button-icon">
             <p class="button-text">{{ btn.name }}</p>
         </button>

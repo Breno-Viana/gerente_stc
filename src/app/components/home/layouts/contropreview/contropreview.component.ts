@@ -1,9 +1,8 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {Chart} from 'chart.js/auto'
-import {MatButton} from '@angular/material/button';
-import {MatTooltip} from '@angular/material/tooltip';
-import {Router, RouterLink} from '@angular/router';
-import {SidebarStateService} from '../../../../services/sidebar.state';
+import { Component, inject, OnInit } from '@angular/core';
+import { Chart } from 'chart.js/auto'
+import { MatTooltip } from '@angular/material/tooltip';
+import { Router, RouterLink } from '@angular/router';
+import { SidebarStateService } from '../../../../services/sidebar.service';
 
 @Component({
   selector: 'app-contropreview',
@@ -16,9 +15,9 @@ import {SidebarStateService} from '../../../../services/sidebar.state';
 export class ControlPreviewComponent implements OnInit {
   async ngOnInit() {
 
-    const {dadosFinanceiros} = await import('../../../../mock/data.mock')
-    const {despesasMensais} = await import('../../../../mock/data.mock')
-    const {residentes} = await import('../../../../mock/data.mock')
+    const { dadosFinanceiros } = await import('../../../../../mock/mock')
+    const { despesasMensais } = await import('../../../../../mock/mock')
+    const { residentes } = await import('../../../../../mock/mock')
 
     const labels = dadosFinanceiros.map(dt => dt.mes)
     const entradas = dadosFinanceiros.map(st => st.entradas)
@@ -96,7 +95,7 @@ export class ControlPreviewComponent implements OnInit {
 
     const res = residentes.map(nome => nome.nome)
     const meses = residentes.map(me => me.totalMeses)
-    new Chart('chart_donut', {
+    new Chart('chart_bar', {
       type: 'bar',
       data: {
         labels: res,
