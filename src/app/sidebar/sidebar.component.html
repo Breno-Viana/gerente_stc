@@ -9,8 +9,8 @@
     <div class="buttons-part">
         <button *ngFor="let btn of buttons; let i = index"
                 class="button-nav"
-                [class.active]="selectedIndex === i"
-                (click)="selectedIndex = i"
+                [class.active]="sidebarService.getIndexOfNav() === i"
+                (click)="change(i)"
                 [routerLink]="btn.route">
             <img [src]=btn.icon class="button-icon">
             <p class="button-text">{{ btn.name }}</p>

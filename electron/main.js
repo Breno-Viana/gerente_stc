@@ -7,7 +7,6 @@ Menu.setApplicationMenu(null)
 function bootApp() {
   const bootWindow = new BrowserWindow({
     minWidth: 300,
-    minHeight: 100,
     height: 800,
     width:1300,
     webPreferences:{

@@ -1,10 +1,103 @@
-:host{
-    height: 95%;
-    width: 97%;
+:host {
+  height: 95%;
+  width: 97%;
+  display: flex;
+  flex-direction: column;
 }
 
-main{
-    height: 100%;
-    width: 100%;
-    background-color: transparent;
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: transparent;
+  position: relative;
+
 }
+
+.ctr_label{
+  padding: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 11%;
+  color: rgb(118, 176, 207);
+  font-style: inherit;
+  text-shadow: 0 0 25px rgba(86, 37, 174, 0.65);
+  font-size: 3vh;
+  position: absolute;
+  top: 10px;
+  left:  10px;
+}
+
+.chart {
+  height: 90%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#chart_pie {
+  width: 90%;
+  height: 90%;
+}
+
+#chart_bar {
+  width: 90%;
+  height: 90%;
+}
+
+
+#chart_donut {
+  width: 90%;
+  height: 90%;
+}
+
+
+.nav {
+  margin-top: auto;
+  padding: 0;
+  border-radius: 5px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 4%;
+  height: 9%;
+  color: rgb(118, 176, 207);
+  background-color: rgba(1, 8, 43, 0.2);
+  border: 1px solid rgba(118, 176, 207, 0.1);
+  font-size: 1.5vh;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+.nav:hover{
+  box-shadow: 0 0 15px rgba(86, 37, 174, 0.65);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 05);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%{
+    transform: scale(1);
+    text-shadow: 0 0 5px rgba(86, 37, 174, 0.65);
+  }50%{
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(86, 37, 174, 0.65);
+  }0%{
+    transform: scale(1);
+    text-shadow: 0 0 5px rgba(86, 37, 174, 0.65);
+  }
+}
+
+
+
