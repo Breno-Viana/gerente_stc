@@ -1,5 +1,5 @@
 {
-  "name": "TDM",
+  "name": "SGTC",
   "version": "0.0.0",
   "main": "./electron/main.js",
   "description": "Tresasury app builded with electron",

@@ -1,8 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { Chart } from 'chart.js/auto'
-import { MatTooltip } from '@angular/material/tooltip';
-import { Router, RouterLink } from '@angular/router';
-import { SidebarStateService } from '../../../../services/sidebar.service';
+import {Component, inject, OnInit} from '@angular/core';
+import {Chart} from 'chart.js/auto'
+import {MatTooltip} from '@angular/material/tooltip';
+import {Router} from '@angular/router';
+import {SidebarStateService} from '../../../../services/sidebar.service';
 
 @Component({
   selector: 'app-contropreview',
@@ -14,14 +14,32 @@ import { SidebarStateService } from '../../../../services/sidebar.service';
 })
 export class ControlPreviewComponent implements OnInit {
   async ngOnInit() {
+    await this.rendererChart()
+  }
 
-    const { dadosFinanceiros } = await import('../../../../../mock/mock')
-    const { despesasMensais } = await import('../../../../../mock/mock')
-    const { residentes } = await import('../../../../../mock/mock')
+
+  protected indexService;
+
+  constructor(indexService: SidebarStateService) {
+    this.indexService = indexService
+  }
+
+  private router = inject(Router)
+
+  gotoControl() {
+    this.router.navigate(['/control'])
+    this.indexService.setIndexOfNav(2)
+  }
+
+  async rendererChart() {
+    const {dadosFinanceiros} = await import('../../../../../mock/mock')
+    const {despesasMensais} = await import('../../../../../mock/mock')
+    const {residentes} = await import('../../../../../mock/mock')
 
     const labels = dadosFinanceiros.map(dt => dt.mes)
     const entradas = dadosFinanceiros.map(st => st.entradas)
     const saidas = dadosFinanceiros.map(st => st.saidas)
+
 
     new Chart('chart_line', {
       type: 'line',
@@ -47,6 +65,7 @@ export class ControlPreviewComponent implements OnInit {
         ]
       },
       options: {
+        animation: {},
         responsive: true,
         scales: {
           y: {
@@ -124,19 +143,5 @@ export class ControlPreviewComponent implements OnInit {
         }
       }
     })
-  }
-
-
-  protected indexService;
-
-  constructor(indexService: SidebarStateService) {
-    this.indexService = indexService
-  }
-
-  private router = inject(Router)
-
-  gotoControl() {
-    this.router.navigate(['/control'])
-    this.indexService.setIndexOfNav(2)
   }
 }

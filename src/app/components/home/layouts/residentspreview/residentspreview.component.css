@@ -1,19 +1,22 @@
-:host{
-    width: 95%;
-    height: 95%;
+:host {
+  width: 95%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 main {
-  flex: 1;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
   background-color: transparent;
   position: relative;
-
+  overflow: hidden;
 }
 
-.res_label{
+.res_label {
   padding: 0;
   margin-top: auto;
   display: flex;
@@ -28,6 +31,87 @@ main {
   font-size: 2.7vh;
   position: absolute;
   top: 10px;
-  left:  10px;
+  left: 10px;
   cursor: default;
+}
+
+.nav {
+  margin-top: auto;
+  padding: 0;
+  border-radius: 5px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 10%;
+  color: rgb(118, 176, 207);
+  background-color: rgba(1, 8, 43, 0.2);
+  border: 1px solid rgba(118, 176, 207, 0.1);
+  font-size: 1.5vh;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.nav:hover {
+  box-shadow: 0 0 15px rgba(86, 37, 174, 0.65);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 05);
+  animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 5px rgba(86, 37, 174, 0.65);
+  }
+  50% {
+    transform: scale(1.01);
+    text-shadow: 0 0 10px rgba(86, 37, 174, 0.65);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 5px rgba(86, 37, 174, 0.65);
+  }
+}
+
+
+.chart {
+  width: 90%;
+  max-width: 900px;
+  background-color: rgba(11, 4, 21, 0.1);
+  margin: 60px auto 20px auto;
+  padding: 16px;
+  border-radius: 13px;
+  flex: 1;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #3a5c6c #0b0415;
+}
+
+.chart::-webkit-scrollbar-thumb:hover {
+  background:#76B0CFFF;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  background-color: transparent;
+  cursor: default;
+  border-color: blue;
+
+}
+
+th {
+  position:sticky;
+  top: -20px;
+  color: rgb(118, 176, 207);
+  background-color: rgb(1, 8, 43) !important;
+}
+
+td {
+  color: rgb(118, 176, 207) !important;
 }
