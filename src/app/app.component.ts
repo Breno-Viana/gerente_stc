@@ -34,7 +34,7 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.pageTitle = 'Controle'
         }
         if (this.router.url.includes('report')){
-          this.pageTitle = 'Relatorios'
+          this.pageTitle = 'Documentos'
         }
       })
   }

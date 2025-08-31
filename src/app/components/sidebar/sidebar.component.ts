@@ -24,7 +24,7 @@ export class SidebarComponent {
     { name: 'tela inicial', icon: 'assets/home.png', route: '/home' },
     { name: 'residents', icon: 'assets/residents.png', route: '/residents' },
     { name: 'controle', icon: 'assets/control.png', route: '/control' },
-    { name: 'relatório', icon: 'assets/report.png', route: '/report' }]
+    { name: 'documentos', icon: 'assets/report.png', route: '/report' }]
 
 
   change(index: number) {

@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SidebarStateService} from '../../../../services/sidebar.service';
 import {Router} from '@angular/router';
 import {MatTooltip} from '@angular/material/tooltip';
 
+
 @Component({
   selector: 'app-reportpreview',
   imports: [
-    MatTooltip
+    MatTooltip,
   ],
   templateUrl: './reportpreview.component.html',
   styleUrl: './reportpreview.component.css'
@@ -14,11 +15,12 @@ import {MatTooltip} from '@angular/material/tooltip';
 export class ReportPreviewComponent {
 
 
-  constructor(private sidebarService:SidebarStateService, private router: Router) {
+  constructor(private sidebarService: SidebarStateService, private router: Router) {
   }
 
-  gotoReports(){
+  gotoReports() {
     this.sidebarService.setIndexOfNav(3)
     this.router.navigate(['/report'])
   }
+
 }
