@@ -23,6 +23,6 @@ function bootApp() {
 app.whenReady()
   .then(() => {
     ipcMain.handle('hello', (str)=>{
-      console.log('Hello Do Electron')
+      console.log(typeof str)
     })
   }).then(bootApp)

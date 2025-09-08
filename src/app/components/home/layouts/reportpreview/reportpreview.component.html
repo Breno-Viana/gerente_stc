@@ -1,9 +1,30 @@
 <main>
   <h2 class="report_label">Documentos</h2>
   <div class="content">
-
+    <div class="search">
+      <label for="srch" class="srch_lbl">Buscar:</label>
+      <input type="text" name="srch" id="srch"
+             placeholder="  .  .  ."
+             autocomplete="off"
+             [(ngModel)]="value"
+             (ngModelChange)="find()">
+    </div>
+    <div class="view_prev">
+      <ul>
+        <li *ngFor="let dd of data_display" class="li_cont">
+          <p>{{dd.name}}</p>
+          <p>{{dd.created_at}}</p>
+          <p>
+            <img src="assets/doc.png" id="doc" class="icons" *ngIf="dd.ext == 'docx'"  matTooltip = "abrir arquivo" matTooltipPosition="after" (click)="sayHello()">
+            <img src="assets/pdf.png" id="pdf" class="icons" *ngIf="dd.ext == 'pdf'" matTooltip = "abrir arquivo" matTooltipPosition="after" (click)="sayHello()" >
+            <img src="assets/xls.png" id="xls" class="icons" *ngIf="dd.ext == 'xlsx'" matTooltip = "abrir arquivo" matTooltipPosition="after" (click)="sayHello()">
+          </p>
+          <img src="assets/edit.png" class="edit_ico" (click)="edit()" matTooltip="editar" matTooltipPosition="after">
+        </li>
+      </ul>
+    </div>
   </div>
-  <button class="nav" (click)="gotoReports()" matTooltip="Ir para relatórios" >
+  <button class="nav" (click)="gotoReports()" matTooltip="Ir para relatórios">
     >>>
   </button>
 </main>

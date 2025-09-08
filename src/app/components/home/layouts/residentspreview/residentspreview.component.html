@@ -4,14 +4,17 @@
     <table mat-table [dataSource]="dataSource" class="tb">
       <ng-container matColumnDef="Nome">
         <th mat-header-cell *matHeaderCellDef>Nome</th>
-        <td mat-cell *matCellDef="let element">{{element.nome}}</td>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
       </ng-container>  <ng-container matColumnDef="Ultimo Pagamento">
         <th mat-header-cell *matHeaderCellDef>Ultimo Pagamento</th>
-        <td mat-cell *matCellDef="let element">{{element.ultimoPagamento}}</td>
+        <td mat-cell *matCellDef="let element">{{element.last_pay}}</td>
       </ng-container>
       <ng-container matColumnDef="Em Dia">
         <th mat-header-cell *matHeaderCellDef>Em Dia</th>
-        <td mat-cell *matCellDef="let element">{{ element.pagamentoEmDia? '✅':' ❌' }}</td>
+        <td mat-cell *matCellDef="let element">
+          <img src="assets/botao-apagar.png" alt="" *ngIf="element.on_time == false" (click)="changeSituation(element)">
+          <img src="assets/verificar.png" alt="" *ngIf="element.on_time == true" (click)="changeSituation(element)">
+        </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayColumn"></tr>

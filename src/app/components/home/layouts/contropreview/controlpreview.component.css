@@ -93,7 +93,7 @@ main {
 
 
 .nav:hover{
-  box-shadow: 0 0 15px rgba(86, 37, 174, 0.65);
+  box-shadow: 0 5px 15px rgba(86, 37, 174, 0.65);
   text-shadow: 0 0 10px rgba(255, 255, 255, 05);
   animation: pulse 1s infinite;
 }

@@ -3,6 +3,9 @@ import {Chart} from 'chart.js/auto'
 import {MatTooltip} from '@angular/material/tooltip';
 import {Router} from '@angular/router';
 import {SidebarStateService} from '../../../../services/sidebar.service';
+import {ControlService} from '../../../../services/control.service';
+import {ResidentsService} from '../../../../services/residents.service';
+import {Balances, DepartamentBalance, Residents} from '../../../../model_utils/models.interfaces';
 
 @Component({
   selector: 'app-contropreview',
@@ -13,14 +16,16 @@ import {SidebarStateService} from '../../../../services/sidebar.service';
   styleUrl: './controlpreview.component.css'
 })
 export class ControlPreviewComponent implements OnInit {
-  async ngOnInit() {
-    await this.rendererChart()
-  }
+
+  private monthExpense:DepartamentBalance[] = []
+  private residents:Residents[] = []
+  private balance:Balances[] = []
 
 
   protected indexService;
-
-  constructor(indexService: SidebarStateService) {
+  constructor(indexService: SidebarStateService,
+              private controlService: ControlService,
+              private residentService: ResidentsService) {
     this.indexService = indexService
   }
 
@@ -31,15 +36,18 @@ export class ControlPreviewComponent implements OnInit {
     this.indexService.setIndexOfNav(2)
   }
 
-  async rendererChart() {
-    const {dadosFinanceiros} = await import('../../../../../mock/mock')
-    const {despesasMensais} = await import('../../../../../mock/mock')
-    const {residentes} = await import('../../../../../mock/mock')
+  ngOnInit() {
 
-    const labels = dadosFinanceiros.map(dt => dt.mes)
-    const entradas = dadosFinanceiros.map(st => st.entradas)
-    const saidas = dadosFinanceiros.map(st => st.saidas)
+    this.monthExpense = this.controlService.getMonthExpense()
+    this.balance = this.controlService.getFinanceData()
+    this.residents = this.residentService.findAll()
+    this.rendererChart()
+  }
 
+  rendererChart() {
+    const labels = this.balance.map(bl => bl.month)
+    const entries = this.balance.map(bl => bl.entries)
+    const exits = this.balance.map(bl => bl.exits)
 
     new Chart('chart_line', {
       type: 'line',
@@ -48,7 +56,7 @@ export class ControlPreviewComponent implements OnInit {
         datasets: [
           {
             label: 'Entradas',
-            data: entradas,
+            data: entries,
             backgroundColor: 'rgba(57,255,20,0.1)',
             borderWidth: 1,
             borderColor: '#9aeb1a',
@@ -56,7 +64,7 @@ export class ControlPreviewComponent implements OnInit {
           },
           {
             label: 'Saidas',
-            data: saidas,
+            data: exits,
             backgroundColor: 'rgba(255,7,58,0.1)',
             borderWidth: 1,
             borderColor: '#eb3f1a',
@@ -75,14 +83,14 @@ export class ControlPreviewComponent implements OnInit {
       }
     })
 
-    const teste = despesasMensais[1]
-    const data = [teste.tesouraria, teste.limpeza, teste.alimentacao, teste.patrimonio, teste.diversos]
+    const teste = this.monthExpense[1]
+    const data = [teste.treasury, teste.hygiene_departament, teste.food_departament, teste.heritage_departament, teste.others]
     new Chart('chart_pie', {
       type: 'pie',
       data: {
         labels: ['Alimentação', 'Limpeza', 'Patrimônio', 'Tesouraria', 'Diversos'],
         datasets: [{
-          label: `Gastos do mês de ${teste.mes}`,
+          label: `Gastos do mês de ${teste.month}`,
           data: data,
           backgroundColor: [
             'rgba(0,255,255,0.6)',
@@ -93,7 +101,7 @@ export class ControlPreviewComponent implements OnInit {
           ],
           borderWidth: 2,
           borderColor: '#111',
-          hoverOffset: 5
+          hoverOffset: 15
         }]
       },
       options: {
@@ -112,16 +120,16 @@ export class ControlPreviewComponent implements OnInit {
       }
     })
 
-    const res = residentes.map(nome => nome.nome)
-    const meses = residentes.map(me => me.totalMeses)
+    const resd = this.residents.map(rs => rs.name)
+    const months = this.residents.map(me => me.months_not_paid)
     new Chart('chart_bar', {
       type: 'bar',
       data: {
-        labels: res,
+        labels: resd,
         datasets: [
           {
             label: 'Meses em atraso',
-            data: meses,
+            data: months,
             backgroundColor: [
               'rgba(0,255,255,0.6)',
               'rgba(57,255,20,0.6)',
