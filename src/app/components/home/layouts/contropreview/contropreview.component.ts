@@ -73,7 +73,6 @@ export class ControlPreviewComponent implements OnInit {
         ]
       },
       options: {
-        animation: {},
         responsive: true,
         scales: {
           y: {
@@ -86,7 +85,7 @@ export class ControlPreviewComponent implements OnInit {
     const teste = this.monthExpense[1]
     const data = [teste.treasury, teste.hygiene_departament, teste.food_departament, teste.heritage_departament, teste.others]
     new Chart('chart_pie', {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: ['Alimentação', 'Limpeza', 'Patrimônio', 'Tesouraria', 'Diversos'],
         datasets: [{

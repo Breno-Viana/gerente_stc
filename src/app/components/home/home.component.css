@@ -43,7 +43,7 @@ main {
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
   background-color: #0d1117;
 }
 

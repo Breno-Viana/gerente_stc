@@ -1,6 +1,6 @@
 {
   "name": "SGTC",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha",
   "main": "./electron/main.js",
   "description": "Tresasury app builded with electron",
   "scripts": {

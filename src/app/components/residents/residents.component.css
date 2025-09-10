@@ -1,0 +1,28 @@
+:host {
+  height: 100vh;
+  width: 100%;
+  background-color: transparent;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: inherit;
+}
+
+
+.infos-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  background-color: transparent;
+}
+
+.residents-viewr{
+  width: 100%;
+  height:65%;
+}

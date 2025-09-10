@@ -10,6 +10,15 @@ export class DocumentsService {
   }
 
   findAllBySpecs(spec: string) {
-    return reports.filter(rp => rp.name.toLowerCase().includes(spec.toLowerCase()) || rp.ext.toLowerCase().includes(spec.toLowerCase()))
+    if (!spec) return reports;
+
+    const search = spec.toLowerCase();
+    return reports.filter(rp =>
+      rp.name.normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-zA-Z0-9 ]/g, "").toLowerCase().includes(search) ||
+      rp.ext.toLowerCase().includes(search)
+    );
   }
+
 }

@@ -68,7 +68,6 @@ main {
 }
 
 .nav:hover {
-  box-shadow: 0 5px 15px rgba(86, 37, 174, 0.65);
   text-shadow: 0 0 10px rgba(255, 255, 255, 05);
   animation: pulse 1s infinite ease-in-out;
 }
@@ -79,7 +78,7 @@ main {
     text-shadow: 0 0 5px rgba(86, 37, 174, 0.65);
   }
   50% {
-    transform: scale(1.01);
+    transform: scale(1.05);
     text-shadow: 0 0 10px rgba(86, 37, 174, 0.65);
   }
   100% {
@@ -138,6 +137,7 @@ ul{
   height: 40px;
   border-bottom: 2px solid #12313e;
   gap: 10px;
+  cursor: default;
 }
 
 .edit_ico:hover{

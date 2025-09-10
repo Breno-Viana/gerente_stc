@@ -1,0 +1,32 @@
+<main>
+  <div class="header">
+    <div class="title"><h4>Residentes registrados</h4></div>
+    <div class="search"><input type="text" name="" id="resident-search" placeholder="Buscar residente: "
+                               [(ngModel)]="search" (ngModelChange)="searchResident()"></div>
+  </div>
+  <div class="line">'</div>
+  <div class="content">
+    <div class="lst-cont-title">
+      <h4>Nome</h4>
+      <h4>Ultimo Pagamento</h4>
+      <h4>Em dia/Devendo</h4>
+      <h4>Meses sem pagar</h4>
+      <div class="opt">
+        <select [(ngModel)]="order" (ngModelChange)="order_()">
+          <option *ngFor="let frm of options_order" [value]="frm.value">{{ frm.label }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="lst">
+      <ul>
+        <li *ngFor="let rr of display_show" class="lst-content">
+          <p>{{ rr.name }}</p>
+          <p>{{ rr.last_pay }}</p>
+          <div *ngIf="rr.on_time" class="flag" style="background-color: #26f626">Em Dia</div>
+          <div *ngIf="!rr.on_time" class="flag" style="background-color: #ec2b2b">Devendo</div>
+          <p class="debit">{{ rr.months_not_paid }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>

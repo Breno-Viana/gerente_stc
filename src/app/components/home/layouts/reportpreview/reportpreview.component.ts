@@ -40,6 +40,14 @@ export class ReportPreviewComponent implements OnInit{
     this.data_display = this.docService.findAllBySpecs(this.value)
   }
 
+  showCalendar(){
+    const input = document.getElementById('date_ipt') as HTMLInputElement
+
+    if (input){
+      input.showPicker()
+    }
+  }
+
   sayHello(){
     console.log('aaaaaaaaaaaaaaaaaaaaaa')
   }

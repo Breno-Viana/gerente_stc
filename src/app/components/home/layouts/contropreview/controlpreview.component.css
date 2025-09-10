@@ -60,7 +60,7 @@ main {
 }
 
 #chart_bar {
-  width: 80%;
+  width: 90%;
   height: 80%;
 }
 
@@ -93,7 +93,6 @@ main {
 
 
 .nav:hover{
-  box-shadow: 0 5px 15px rgba(86, 37, 174, 0.65);
   text-shadow: 0 0 10px rgba(255, 255, 255, 05);
   animation: pulse 1s infinite;
 }
@@ -103,7 +102,7 @@ main {
     transform: scale(1);
     text-shadow: 0 0 5px rgba(86, 37, 174, 0.65);
   }50%{
-    transform: scale(1.01);
+    transform: scale(1.05);
     text-shadow: 0 0 10px rgba(86, 37, 174, 0.65);
   }100%{
     transform: scale(1);
