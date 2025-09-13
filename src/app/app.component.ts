@@ -37,6 +37,7 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.pageTitle = 'Documentos'
         }
       })
+    this.router.navigate(['/home'])
   }
 
 

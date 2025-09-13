@@ -1,3 +1,24 @@
 <main>
+  <h4 class="title">Adicionar Residente</h4>
 
+  <form [formGroup]="form_group" (ngSubmit)="onSubmit()" method="post" class="form">
+    <div class="fields name">
+      <label for="name">Nome</label>
+      <input type="text" name="name" id="name" formControlName="name" autocomplete="off">
+    </div>
+    <div class="fields debits">
+      <label for="amount">Devendo</label>
+      <input type="number" name="amount" id="amount" formControlName="amount" autocomplete="off">
+    </div>
+    <div class="fields months">
+      <label for="amount">Meses Devendo</label>
+      <input type="number" name="amount" id="months" formControlName="months" autocomplete="off">
+    </div>
+    <div class="fields entry">
+      <label for="amount">Ultimo Pagamento ou Mes de Entrada</label>
+      <input type="date" name="amount" id="date" formControlName="date" autocomplete="off" placeholder="Ultimo Pagamento ou Mes de Entrada">
+    </div>
+    <button type="submit" class="sub-btn btn" [disabled]="!form_group.valid">Registrar</button>
+    <button type="reset" class="clear btn">Limpar</button>
+  </form>
 </main>

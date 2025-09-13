@@ -7,14 +7,26 @@
   <div class="line">'</div>
   <div class="content">
     <div class="lst-cont-title">
-      <h4>Nome</h4>
-      <h4>Ultimo Pagamento</h4>
-      <h4>Em dia/Devendo</h4>
+      <h4 class="nam">Nome</h4>
+      <h4 class="lastpay">Ultimo Pagamento</h4>
+      <h4 class="onday">Em dia/Devendo</h4>
       <h4>Meses sem pagar</h4>
-      <div class="opt">
-        <select [(ngModel)]="order" (ngModelChange)="order_()">
-          <option *ngFor="let frm of options_order" [value]="frm.value">{{ frm.label }}</option>
-        </select>
+      <h4 class="deb">Devendo</h4>
+      <div class="opts">
+        <div class="opt-2">
+          Filtrar por:
+          <select [(ngModel)]="filter" (ngModelChange)="filter_()">
+            <option *ngFor="let frm of options_filter" [value]="frm.value">
+              {{ frm.label }}
+            </option>
+          </select>
+        </div>
+        <div class="opt">
+          Ordenar Por:
+          <select [(ngModel)]="order" (ngModelChange)="order_()">
+            <option *ngFor="let frm of options_order" [value]="frm.value">{{ frm.label }}</option>
+          </select>
+        </div>
       </div>
     </div>
     <div class="lst">
@@ -25,6 +37,9 @@
           <div *ngIf="rr.on_time" class="flag" style="background-color: #26f626">Em Dia</div>
           <div *ngIf="!rr.on_time" class="flag" style="background-color: #ec2b2b">Devendo</div>
           <p class="debit">{{ rr.months_not_paid }}</p>
+          <p>{{ rr.amount_debit }}</p>
+          <img src="assets/edit.png" class="edit_ico" (click)="notifyEdit(rr)" matTooltip="Editar">
+          <button class="calculate" (click)="notifyCalc(rr)">Calcular</button>
         </li>
       </ul>
     </div>

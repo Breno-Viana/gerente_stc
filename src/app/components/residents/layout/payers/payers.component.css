@@ -1,0 +1,11 @@
+main{
+  box-sizing: border-box;
+  width: 95%;
+  height: 500px;
+  margin-top: 50px;
+  background-color:var(--principal-backgound);
+  justify-self: start;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}

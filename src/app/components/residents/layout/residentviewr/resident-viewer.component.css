@@ -1,7 +1,8 @@
 
 main {
+  margin-top: 60px;
   width: 100%;
-  height: 100%;
+  height: 600px;
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -14,7 +15,7 @@ main {
   width: 95%;
   height: 2px;
   border-radius: 20px;
-  background-color: #3e5773;
+  background-color:var(--line-color);
   z-index: 999;
   color: transparent;
 }
@@ -22,7 +23,7 @@ main {
 .title {
   width: 90%;
   font-size: 2.5vh;
-  color: #77abe4;
+  color: var(--main-title-color);
 }
 
 .content {
@@ -32,12 +33,12 @@ main {
   width: 95%;
   height: 100%;
   border-radius: 10px;
-  background-color: #0d1117;
+  background-color:var(--principal-backgound);
 }
 
 ul {
   list-style-type: none;
-  color: rgb(118, 176, 207);
+  color: var(--main-title-color);
 }
 
 .lst {
@@ -56,7 +57,7 @@ ul {
   width: 99%;
   padding-left: 30px;
   display: grid;
-  grid-template-columns: 0.9fr 0.6fr 0.5fr 0.3fr 1fr;
+  grid-template-columns:  0.7fr 0.6fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr;
   gap: 100px;
   border-bottom: 1px solid #252e35;
   font-size: 2vh;
@@ -65,11 +66,11 @@ ul {
 }
 
 .flag {
-  font-size: 1.7vh;
+  font-size: 1.5vh;
   border-radius: 20px;
   color: #fff;
   font-weight: bold;
-  width: 60%;
+  width: 65%;
   height: 80%;
   display: flex;
   justify-content: center;
@@ -88,7 +89,7 @@ ul {
 
 .lst-cont-title{
   display: grid;
-  grid-template-columns: 0.9fr 0.6fr 0.5fr 0.3fr 1fr;
+  grid-template-columns: 0.5fr 0.6fr 0.5fr 0.3fr 0.5fr 1fr;
   align-items: center;
   padding-left: 30px;
   color: #77abe4;
@@ -96,6 +97,7 @@ ul {
   height: 40px;
   border-radius: 10px 10px 0 0 ;
   background-color: rgb(1, 8, 43);
+
 }
 
 .header{
@@ -111,6 +113,8 @@ input{
   justify-self: end;
   display: flex;
   align-content: end;
+  cursor: pointer;
+  margin-bottom: 5px;
 }
 
 #resident-search{
@@ -128,9 +132,62 @@ input{
 }
 
 .lst-content:hover{
-  background-color: #344360;
+  background-color: var(--li-content-hover);
+}
+.opts{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  font-size: 1.7vh;
+  font-weight: bold;
 }
 
-.opt{
+select{
+  width: 70px;
+  background-color: transparent;
+  color: #77abe4;
+  font-size: 1.5vh;
+  font-weight: bolder;
+}
+.deb{
   justify-self: center;
+}
+
+.nam{
+  margin-left:40px;
+}
+
+
+.edit_ico{
+  width: 40px;
+  height: 40px;
+}
+
+.edit_ico:hover{
+  background-color: var(--edit-ico-hover);
+  border-radius: 20px;
+  scale: 1.12;
+}
+
+
+.lastpay{
+  margin-left: 50px;
+}
+
+.onday{
+  margin-left: 20px;
+}
+
+.calculate{
+  justify-self: start;
+  width: 80px;
+  background-color: var(--principal-backgound);
+  height: 30px;
+  font-size: 1.5vh;
+  font-weight: bolder;
+  color: #77abe4;
+  cursor: pointer;
+}
+.calculate:hover{
+  background-color: #212c6a;
 }

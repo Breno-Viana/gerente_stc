@@ -27,7 +27,7 @@ main {
   align-items: center;
   width: 20%;
   height: 15%;
-  color: rgb(118, 176, 207);
+  color: var(--main-title-color);
   font-style: inherit;
   font-size: 2.7vh;
   position: absolute;
@@ -47,7 +47,7 @@ main {
   width: 10%;
   height: 10%;
   color: rgb(118, 176, 207);
-  background-color: rgba(1, 8, 43, 0.2);
+  background-color:var(--principal-backgound);
   border: 1px solid rgba(118, 176, 207, 0.1);
   font-size: 1.5vh;
   position: absolute;
@@ -83,7 +83,7 @@ main {
 .chart {
   width: 100%;
   max-width: 900px;
-  background-color: rgba(11, 4, 21, 0.1);
+  background-color: var(--principal-backgound);
   margin-top: 5vh;
   padding: 20px;
   border-radius: 13px;
@@ -116,7 +116,7 @@ td {
 }
 
 .mat-mdc-row:nth-child(even) {
-  background-color: #0d1117;
+  background-color: var(--principal-backgound);
 }
 
 .mat-mdc-row:nth-child(odd) {

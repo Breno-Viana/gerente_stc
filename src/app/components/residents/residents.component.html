@@ -1,11 +1,21 @@
 <main>
-<div class="infos-row">
-  <app-infrow></app-infrow>
-</div>
-  <div class="residents-viewr">
-    <app-residentviewr></app-residentviewr>
+  <div class="infos-row">
+    <app-infrow></app-infrow>
   </div>
-  <div class="resident-persistence">
-    <app-residentpersistence></app-residentpersistence>
+  <div class="residents-viewr">
+    <app-residentviewr (notifier_edit)="edit_resident($event)"
+                       (notifier_calc)="calc_tariff($event)"
+                       [display_show]="to_send"
+                       [original_order]="to_send" ></app-residentviewr>
+  </div>
+  <div class="resident-crud">
+    <div class="header">
+      <h5 class="title">Gerenciamento</h5>
+      <div class="line" style="color: transparent">,</div>
+    </div>
+    <div class="crud">
+      <app-residentpersistence (notifier)="save($event)"></app-residentpersistence>
+      <app-payers></app-payers>
+    </div>
   </div>
 </main>

@@ -23,7 +23,7 @@ main {
   align-items: center;
   width: 10%;
   height: 11%;
-  color: rgb(118, 176, 207);
+  color: var(--main-title-color);
   font-style: inherit;
   font-size: 3vh;
   position: absolute;
@@ -82,7 +82,7 @@ main {
   width: 4%;
   height: 9%;
   color: rgb(118, 176, 207);
-  background-color: rgba(1, 8, 43, 0.2);
+  background-color: var(--home-nav-buttons);
   border: 1px solid rgba(118, 176, 207, 0.1);
   font-size: 1.5vh;
   position: absolute;

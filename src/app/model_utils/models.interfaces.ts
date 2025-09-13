@@ -14,13 +14,19 @@ export interface Balances{
   entries:number
 }
 
-
+export interface ResidentForForm{
+  name_entity:string,
+  amount_entity:number,
+  deb_entity:number,
+  last_entity:string
+}
 
 export interface Residents{
   name:string,
   months_not_paid:number,
   on_time:boolean,
   last_pay:string,
+  amount_debit:number
 }
 
 
