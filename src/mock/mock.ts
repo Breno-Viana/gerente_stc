@@ -118,26 +118,166 @@ export const balances: Balances[] = [
 
 // Array de Residents (10 pessoas)
 export const residents: Residents[] = [
-  { name: "Alice Silva", months_not_paid: 0, on_time: true, last_pay: "2025-09-01", amount_debit: 0 },
-  { name: "Bruno Costa", months_not_paid: 2, on_time: false, last_pay: "2025-07-15", amount_debit: 400 },
-  { name: "Carla Souza", months_not_paid: 1, on_time: true, last_pay: "2025-08-20", amount_debit: 200 },
-  { name: "Daniel Oliveira", months_not_paid: 3, on_time: false, last_pay: "2025-06-10", amount_debit: 600 },
-  { name: "Eduarda Lima", months_not_paid: 0, on_time: true, last_pay: "2025-09-05", amount_debit: 0 },
-  { name: "Fábio Rocha", months_not_paid: 4, on_time: false, last_pay: "2025-05-30", amount_debit: 800 },
-  { name: "Gabriela Martins", months_not_paid: 1, on_time: true, last_pay: "2025-08-12", amount_debit: 200 },
-  { name: "Henrique Alves", months_not_paid: 0, on_time: true, last_pay: "2025-09-03", amount_debit: 0 },
-  { name: "Isabela Fernandes", months_not_paid: 2, on_time: false, last_pay: "2025-07-28", amount_debit: 400 },
-  { name: "João Pereira", months_not_paid: 0, on_time: true, last_pay: "2025-09-06", amount_debit: 0 },
-  { name: "Karina Santos", months_not_paid: 1, on_time: true, last_pay: "2025-08-18", amount_debit: 200 },
-  { name: "Leonardo Barbosa", months_not_paid: 3, on_time: false, last_pay: "2025-06-05", amount_debit: 600 },
-  { name: "Mariana Ribeiro", months_not_paid: 0, on_time: true, last_pay: "2025-09-02", amount_debit: 0 },
-  { name: "Nicolas Gomes", months_not_paid: 2, on_time: false, last_pay: "2025-07-20", amount_debit: 400 },
-  { name: "Olívia Castro", months_not_paid: 1, on_time: true, last_pay: "2025-08-25", amount_debit: 200 },
-  { name: "Paulo Lima", months_not_paid: 0, on_time: true, last_pay: "2025-09-04", amount_debit: 0 },
-  { name: "Quésia Nunes", months_not_paid: 3, on_time: false, last_pay: "2025-06-12", amount_debit: 600 },
-  { name: "Ricardo Teixeira", months_not_paid: 0, on_time: true, last_pay: "2025-09-01", amount_debit: 0 },
-  { name: "Sofia Moreira", months_not_paid: 2, on_time: false, last_pay: "2025-07-10", amount_debit: 400 },
-  { name: "Thiago Carvalho", months_not_paid: 1, on_time: true, last_pay: "2025-08-22", amount_debit: 200 },
+  {
+    id: "1",
+    name: "Ana Souza",
+    months_not_paid: 0,
+    on_time: true,
+    last_pay: "2025-09-01",
+    amount_debit: 0
+  },
+  {
+    id: "2",
+    name: "Bruno Lima",
+    months_not_paid: 2,
+    on_time: false,
+    last_pay: "2025-07-15",
+    amount_debit: 350
+  },
+  {
+    id: "3",
+    name: "Carla Mendes",
+    months_not_paid: 1,
+    on_time: false,
+    last_pay: "2025-08-05",
+    amount_debit: 180
+  },
+  {
+    id: "4",
+    name: "Diego Santos",
+    months_not_paid: 0,
+    on_time: true,
+    last_pay: "2025-09-02",
+    amount_debit: 0
+  },
+  {
+    id: "5",
+    name: "Eduarda Farias",
+    months_not_paid: 3,
+    on_time: false,
+    last_pay: "2025-06-20",
+    amount_debit: 540
+  },
+  {
+    id: "6",
+    name: "Felipe Araújo",
+    months_not_paid: 0,
+    on_time: true,
+    last_pay: "2025-09-10",
+    amount_debit: 0
+  },
+  {
+    id: "7",
+    name: "Gabriela Martins",
+    months_not_paid: 5,
+    on_time: false,
+    last_pay: "2025-04-12",
+    amount_debit: 900
+  },
+  {
+    id: "8",
+    name: "Henrique Oliveira",
+    months_not_paid: 0,
+    on_time: true,
+    last_pay: "2025-09-05",
+    amount_debit: 0
+  },
+  {
+    id: "9",
+    name: "Isabela Correia",
+    months_not_paid: 2,
+    on_time: false,
+    last_pay: "2025-07-25",
+    amount_debit: 400
+  },
+  {
+    id: "10",
+    name: "João Pedro",
+    months_not_paid: 0,
+    on_time: true,
+    last_pay: "2025-09-08",
+    amount_debit: 0
+  },
+  {
+    id: "11",
+    name: "Kátia Nunes",
+    months_not_paid: 4,
+    on_time: false,
+    last_pay: "2025-05-15",
+    amount_debit: 760
+  },
+  {
+    id: "12",
+    name: "Lucas Almeida",
+    months_not_paid: 1,
+    on_time: false,
+    last_pay: "2025-08-03",
+    amount_debit: 200
+  },
+  {
+    id: "13",
+    name: "Mariana Rocha",
+    months_not_paid: 0,
+    on_time: true,
+    last_pay: "2025-09-09",
+    amount_debit: 0
+  },
+  {
+    id: "14",
+    name: "Nicolas Freitas",
+    months_not_paid: 6,
+    on_time: false,
+    last_pay: "2025-03-11",
+    amount_debit: 1200
+  },
+  {
+    id: "15",
+    name: "Olívia Barros",
+    months_not_paid: 0,
+    on_time: true,
+    last_pay: "2025-09-12",
+    amount_debit: 0
+  },
+  {
+    id: "16",
+    name: "Paulo Henrique",
+    months_not_paid: 2,
+    on_time: false,
+    last_pay: "2025-07-10",
+    amount_debit: 360
+  },
+  {
+    id: "17",
+    name: "Queila Ramos",
+    months_not_paid: 0,
+    on_time: true,
+    last_pay: "2025-09-11",
+    amount_debit: 0
+  },
+  {
+    id: "18",
+    name: "Rafael Costa",
+    months_not_paid: 3,
+    on_time: false,
+    last_pay: "2025-06-08",
+    amount_debit: 600
+  },
+  {
+    id: "19",
+    name: "Sofia Carvalho",
+    months_not_paid: 1,
+    on_time: false,
+    last_pay: "2025-08-20",
+    amount_debit: 150
+  },
+  {
+    id: "20",
+    name: "Thiago Silva",
+    months_not_paid: 0,
+    on_time: true,
+    last_pay: "2025-09-13",
+    amount_debit: 0
+  }
 ];
 
 // Array de Reports (10 relatórios)

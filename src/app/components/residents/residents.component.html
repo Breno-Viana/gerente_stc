@@ -10,12 +10,16 @@
   </div>
   <div class="resident-crud">
     <div class="header">
-      <h5 class="title">Gerenciamento</h5>
+      <h5 class="title">Adicionar / Dados</h5>
       <div class="line" style="color: transparent">,</div>
     </div>
     <div class="crud">
       <app-residentpersistence (notifier)="save($event)"></app-residentpersistence>
-      <app-payers></app-payers>
+      <app-payer></app-payer>
+      <div class="cards">
+        <app-entries-card class="cards-d"></app-entries-card>
+        <app-entries-payers-card class="cards-d"></app-entries-payers-card>
+      </div>
     </div>
   </div>
 </main>

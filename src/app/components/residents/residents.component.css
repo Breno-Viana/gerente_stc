@@ -57,8 +57,20 @@ main {
 
 .crud{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
   gap: 40px;
 }
+
+
+
+.cards{
+  margin-top: 50px;
+  height: 500px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 
 

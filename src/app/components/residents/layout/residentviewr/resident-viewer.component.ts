@@ -18,8 +18,17 @@ import {MatTooltip} from '@angular/material/tooltip';
 })
 export class ResidentViewerComponent  {
   constructor(private residentService: ResidentsService) {
-    const data = residentService.findAll();
-    this.original_order = [...data];
+    this.order = 'name'
+    this.order_()
+    this.order = 'default'
+    this.order_()
+
+
+
+    this.filter = 'on_time'
+    this.filter_()
+    this.filter = 'default'
+    this.filter_()
   }
 
   @Input() original_order: Residents[] = []

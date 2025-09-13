@@ -3,8 +3,10 @@ import {InfoRowComponent} from './layout/infrow/info-row.component';
 import {ResidentViewerComponent} from './layout/residentviewr/resident-viewer.component';
 import {ResidentpersistenceComponent} from './layout/residentpersistence/residentpersistence.component';
 import {ResidentForForm, Residents} from '../../model_utils/models.interfaces';
-import {PayersComponent} from './layout/payers/payers.component';
 import {ResidentsService} from '../../services/residents.service';
+import {EntriesCardComponent} from './layout/entries-card/entries-card.component';
+import {EntriesPayersCardComponent} from './layout/entries-payers-card/entries-payers-card.component';
+import {PayerComponent} from './layout/payer/payer.component';
 
 @Component({
   selector: 'app-residents',
@@ -12,7 +14,9 @@ import {ResidentsService} from '../../services/residents.service';
     InfoRowComponent,
     ResidentViewerComponent,
     ResidentpersistenceComponent,
-    PayersComponent
+    EntriesCardComponent,
+    EntriesPayersCardComponent,
+    PayerComponent
   ],
   templateUrl: './residents.component.html',
   styleUrl: './residents.component.css'
@@ -22,23 +26,32 @@ export class ResidentsComponent {
     this.to_send = this.residentService.findAll()
   }
 
-  @ViewChild(ResidentViewerComponent) child!:ResidentViewerComponent
+  @ViewChild(ResidentViewerComponent) child!: ResidentViewerComponent
 
 
-  edit_resident(resident:Residents){
-    window.alert(resident.name)
+  edit_resident(resident: Residents) {
+    window.api.showWarning(`id ${resident.id}  nome ${resident.name}`)
   }
 
-  calc_tariff(resident:Residents){
-    window.alert(resident.amount_debit)
+  calc_tariff(resident: Residents) {
+    window.api.showWarning(resident.amount_debit)
+  }
+
+  update_payment(resident: Residents) {
+
   }
 
 
-  to_send:Residents[] = []
-  save(resident:ResidentForForm){
+  to_send: Residents[] = []
+
+  save(resident: ResidentForForm) {
     this.residentService.save(resident)
+    this.reload()
+  }
+
+  private reload() {
     this.to_send = this.residentService.findAll()
-    if (this.child){
+    if (this.child) {
       this.child.order = 'name'
       this.child.order_()
       this.child.order = 'default'
@@ -47,11 +60,9 @@ export class ResidentsComponent {
       this.child.filter = 'on_time'
       this.child.filter_()
       this.child.filter = 'default'
-      this,this.child.filter_()
+      this.child.filter_()
     }
   }
-
-
 
 
 }

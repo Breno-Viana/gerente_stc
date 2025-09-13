@@ -1,0 +1,30 @@
+
+:host{
+  width: 100%;
+  height: 50%;
+}
+
+
+main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--principal-backgound);
+  border-radius: 10px;
+  color: var(--main-title-color);
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.title{
+  font-size: 3vh;
+  position: relative;top: -30px;
+}
+
+.data{
+  font-size: 9vh;
+  color: #26f626;
+}
+

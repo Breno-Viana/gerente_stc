@@ -1,0 +1,17 @@
+
+
+main{
+  background-color: var(--principal-backgound);
+  width: 100%;
+  height: 500px;
+  margin-top: 50px;
+  border-radius: 10px;
+  font-size: 2.5vh;
+  color: var(--main-title-color);
+}
+
+.title{
+  position: relative;
+  top: 30px;
+  left: 30px;
+}

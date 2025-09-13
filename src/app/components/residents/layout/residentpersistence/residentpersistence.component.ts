@@ -30,6 +30,11 @@ export class ResidentpersistenceComponent {
     const amount = this.form_group.value.amount
     const months = this.form_group.value.months
     const date = this.form_group.value.date
+    if (name?.trim() ===''){
+      window.api.showWarning('Coloque um nome valido')
+      return
+    }
+
     const entity: {} = {
       name_entity:name,
       amount_entity:amount,

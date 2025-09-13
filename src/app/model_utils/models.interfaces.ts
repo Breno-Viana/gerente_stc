@@ -22,6 +22,7 @@ export interface ResidentForForm{
 }
 
 export interface Residents{
+  id?:string,
   name:string,
   months_not_paid:number,
   on_time:boolean,

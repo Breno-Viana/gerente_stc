@@ -38,7 +38,7 @@
           <div *ngIf="!rr.on_time" class="flag" style="background-color: #ec2b2b">Devendo</div>
           <p class="debit">{{ rr.months_not_paid }}</p>
           <p>{{ rr.amount_debit }}</p>
-          <img src="assets/edit.png" class="edit_ico" (click)="notifyEdit(rr)" matTooltip="Editar">
+          <img src="assets/edit.png" class="edit_ico" (click)="notifyEdit(rr)" matTooltip="Editar" style="cursor:pointer;">
           <button class="calculate" (click)="notifyCalc(rr)">Calcular</button>
         </li>
       </ul>
