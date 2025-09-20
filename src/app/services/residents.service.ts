@@ -69,6 +69,7 @@ export class ResidentsService{
 
   save(entity:ResidentForForm){
     const to_save:Residents = {
+      id:crypto.randomUUID(),
       name:entity.name_entity,
       on_time: entity.deb_entity == 0,
       last_pay:entity.last_entity,

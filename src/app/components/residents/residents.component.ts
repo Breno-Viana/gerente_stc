@@ -27,6 +27,7 @@ export class ResidentsComponent {
   }
 
   @ViewChild(ResidentViewerComponent) child!: ResidentViewerComponent
+  @ViewChild(PayerComponent) child_p!:PayerComponent
 
 
   edit_resident(resident: Residents) {
@@ -34,7 +35,7 @@ export class ResidentsComponent {
   }
 
   calc_tariff(resident: Residents) {
-    window.api.showWarning(resident.amount_debit)
+    window.api.showWarning(resident.amount_debit.toString())
   }
 
   update_payment(resident: Residents) {
@@ -42,10 +43,11 @@ export class ResidentsComponent {
   }
 
 
-  to_send: Residents[] = []
+  to_send!: Residents[]
 
   save(resident: ResidentForForm) {
     this.residentService.save(resident)
+    this.child_p.load_opts()
     this.reload()
   }
 

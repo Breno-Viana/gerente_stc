@@ -1,6 +1,40 @@
 <main>
   <h4 class="title">Enviar Pagamento</h4>
-  <select>
+  <div class="content">
+    <div class="opt">
+      <h4>Selecione o Residente</h4>
+      <select class="sel" [(ngModel)]="opt" (ngModelChange)="on_opt_change()">
+        <option class="opts" *ngFor="let rr of residents_opt" [value]="rr.value">
+          {{ rr.name }} | Deve: {{ rr.amount | currency:'BRL' }}
+        </option>
+      </select>
+    </div>
+    <div class="data">
+      <div class="paid dta">
+        <label for="paid-val">Valor pago:</label>
+        <input type="number" name="paid-val" id="paid-val" placeholder="valor pago" [(ngModel)]="payed_value ">
+      </div>
+      <div class="mp dta">
+        <label for="mp">Meses a pagar:</label>
+        <select class="mp-sel" [(ngModel)]="month_selected" (ngModelChange)="change_month()">
+          <option *ngFor="let month of months_to_pay">{{ month}}</option>
+        </select>
+      </div>
+      <div class="credit dta">
+        <label for="cdr">Usar Crédito:</label>
+        <input type="checkbox" name="cdr" id="cdr" [(ngModel)]='using_credit'>
+      </div>
+      <div class="label">
+        <h5 class="lb">Valor Total: {{ payed_value }}</h5>
+      </div>
 
-  </select>
+      <div class="mini-cards">
+        <div class="cards" *ngFor="let c of months_p">
+          <p class="x" (click)="rem_month(c)">x</p>
+          <p>{{ c }}</p>
+        </div>
+      </div>
+    </div>
+    <button class="submit">Enviar</button>
+  </div>
 </main>

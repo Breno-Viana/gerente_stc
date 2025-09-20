@@ -16,13 +16,19 @@ export class ResidentpersistenceComponent {
   }
 
   form_group = new FormGroup({
-    amount: new FormControl(0),
+    amount: new FormControl(0,[
+      Validators.required
+    ]),
     name: new FormControl('', [
       Validators.required,
       Validators.min(3)
     ]),
-    months: new FormControl(0),
-    date: new FormControl(new Date().toISOString().split('T')[0])
+    months: new FormControl(0,[
+      Validators.required
+    ]),
+    date: new FormControl(new Date().toISOString().split('T')[0],[
+      Validators.required
+    ])
   })
 
   onSubmit() {
@@ -52,7 +58,7 @@ export class ResidentpersistenceComponent {
       months: new FormControl(0),
       date: new FormControl(new Date().toISOString().split('T')[0])
     })
-    window.alert(`${name} registrado com sucesso`)
+    window.api.showWarning(`${name} registrado com sucesso`)
   }
 
 

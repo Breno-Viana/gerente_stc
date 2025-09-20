@@ -15,7 +15,7 @@
     </div>
     <div class="crud">
       <app-residentpersistence (notifier)="save($event)"></app-residentpersistence>
-      <app-payer></app-payer>
+      <app-payer [residents]="to_send"></app-payer>
       <div class="cards">
         <app-entries-card class="cards-d"></app-entries-card>
         <app-entries-payers-card class="cards-d"></app-entries-payers-card>
